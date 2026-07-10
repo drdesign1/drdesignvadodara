@@ -1,0 +1,153 @@
+/*::::::::::::::::::::::::::::::::::::
+   Portfolio Section - Recent Work
+::::::::::::::::::::::::::::::::::::*/
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+
+/* Section */
+.portfolio-section {
+    padding: 80px 0px;
+    margin-bottom: 0px; /* 👈 ye gap dega neeche */
+    background: #f8f9fa;
+    text-align: center;
+}
+
+/* Title */
+.section-title h2 {
+    font-size: 36px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+
+/* Filter */
+.portfolio-filter {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.portfolio-filter button {
+    padding: 5px 20px;
+    margin: 5px;
+    border: 2px solid #ff6633;
+    background: transparent;
+    color: #333;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.portfolio-filter button:hover,
+.portfolio-filter button.active {
+    background: #ff6633;
+    color: #fff;
+}
+
+
+/* Portfolio Grid & Items */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.portfolio-item {
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    background: #000;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: 0.5s ease;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+/* Lightbox Styling */
+.lightbox {
+    display: none; /* Controlled by JS */
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 10000;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+
+.lightbox-content {
+    position: relative;
+    text-align: center;
+    max-width: 80%;
+}
+
+#lightbox-img {
+    max-height: 80vh;
+    max-width: 100%;
+    border-radius: 8px;
+    border: 3px solid #ff6633; /* Your Orange Theme */
+}
+
+/* Controls */
+.close-btn {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    font-size: 50px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    color: #fff;
+    padding: 20px;
+    cursor: pointer;
+    background: rgba(255, 102, 51, 0.2);
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.nav-arrow:hover { background: #ff6633; }
+.prev-arrow { left: 30px; }
+.next-arrow { right: 30px; }
+
+.count-display {
+    color: #fff;
+    margin-top: 15px;
+    font-family: sans-serif;
+    letter-spacing: 2px;
+}
+
+
+/* Animation */
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
