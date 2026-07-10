@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="UTF-8">
+    <title>Single Blog | DR Design Blog </title>
+
+
+    
+    <!-- ====== Google Fonts ====== -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" rel="stylesheet">
+
+    <!-- ====== ALL CSS ====== -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/css/lightbox.min.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        .bg-primari {
+            background-color: #ff6600 !important;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Floating Scroll Toggle Button Style */
+        .floating-buttons {
+          position: fixed;
+          bottom: 30px;
+          left: 30px;
+          z-index: 999;
+        }
+        #scrollToggleBtn {
+          width: 45px;
+          height: 45px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #fff;
+          border: none;
+          cursor: pointer;
+          font-size: 18px;
+          transition: 0.3s;
+          background: #ff7a00;
+          box-shadow: 0 5px 15px rgba(255, 122, 0, 0.4);
+          animation: pulse 2s infinite;
+        }
+        #scrollToggleBtn:hover {
+          transform: translateY(-4px);
+        }
+        @keyframes pulse {
+          0% { box-shadow: 0 0 0 0 rgba(255, 122, 0, 0.7); }
+          70% { box-shadow: 0 0 0 12px rgba(255, 122, 0, 0); }
+          100% { box-shadow: 0 0 0 0 rgba(255, 122, 0, 0); }
+        }
+
+        /* Fixed Positioning Right side WhatsApp */
+        .dr-whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .dr-wa-ripple {
+            position: absolute;
+            width: 75px;
+            height: 75px;
+            background: rgba(255, 95, 0, 0.4); 
+            border-radius: 50%;
+            animation: dr-ripple-effect 2s infinite;
+        }
+        .dr-wa-btn {
+            position: relative;
+            width: 65px;
+            height: 65px;
+            background: #25d366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.3s;
+            text-decoration: none;
+        }
+        .dr-wa-btn:hover {
+            transform: scale(1.1) rotate(10deg);
+            background: #128c7e;
+            color: #fff;
+        }
+        .dr-wa-tooltip {
+            position: absolute;
+            right: 85px;
+            background: #ff5f00;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: 600;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        .dr-whatsapp-float:hover .dr-wa-tooltip {
+            opacity: 1;
+            visibility: visible;
+            right: 80px;
+        }
+        @keyframes dr-ripple-effect {
+            0% { transform: scale(0.9); opacity: 1; }
+            100% { transform: scale(1.6); opacity: 0; }
+        }
+        .dr-wa-shake {
+            animation: dr-shake-logic 6s infinite;
+        }
+        @keyframes dr-shake-logic {
+            0%, 85%, 100% { transform: rotate(0deg); }
+            87% { transform: rotate(18deg); }
+            89% { transform: rotate(-18deg); }
+            91% { transform: rotate(12deg); }
+            93% { transform: rotate(-12deg); }
+        }
+    </style>
+
+</head>
+
+<body data-spy="scroll" data-target=".navbar-nav">
+      <!-- ====== Header ====== -->
+    <header id="header" class="header">
+        <nav class="navbar navbar-expand-lg fixed-top"> <!-- ====== Navbar ====== --> 
+            <div class="container">
+
+                    <!-- Logo -->
+                <a class="navbar-brand logo" href="index.html">
+                    <img src="assets/images/logo.png" alt="logo">
+                </a>
+                <!-- // Logo -->
+
+                  <!-- Mobile Menu -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-expanded="false">
+                    <span><i class="fa fa-bars"></i></span>
+                </button>
+                 <!-- Mobile Menu -->
+
+                <div class="collapse navbar-collapse main-menu" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="blog.html">BLOG</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    <!-- ====== // Navbar ====== -->
+            <!-- Page Title -->
+        <div class="page-title bg-img section-padding bg-overlay" style="background-image: url(assets/images/breadcrumb.jpg)">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 text-center">
+                        <h2>Single Blog</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+   <!-- ====== // Header ====== -->
+
+
+    <section class="blog-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="blog-post">
+                        <img src="assets/images/blog/img-1.png" alt="" class="blog-img">
+                        <h4 class="blog-title"><a href="#">Building Fully Responsive UI Layouts For Enterprise Apps</a></h4>
+                        <p class="blog-meta"><a class="user-name" href="#">DR Design</a><span class="blog-date">22 FEB 2018</span><a href="#" class="blog-comment">Comments (05)</a></p>
+                        
+                        <div class="blog-main-content">
+                            <p>Creating functional digital setups demands deep knowledge of layout engines and clean architecture style workflows. Designers have to consider user behaviors across hundreds of viewports. Modern websites require perfect responsive grids that adapt immediately to deliver lightning-fast digital interactions without losing clarity.</p>
+
+                            <blockquote class="blockquote bg-light">
+                                <h6>Simplicity is the ultimate key to professional user experience.</h6>
+                                <p>Great product design focuses intently on solving visual friction while highlighting foundational branding goals.</p>
+                            </blockquote>
+
+                            <p>Investing time into advanced utility functions like structured typography matrices and dynamic asset pipelines keeps system dependencies stable. Make certain that image sizing parameters allow high-speed rendering across handheld screens, maximizing accessibility metrics while securing peak retention rates for business growth objectives.</p>
+
+                            <div class="blog-content-footer">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <p>Share:</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <ul class="share text-right">
+                                            <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
+                                            <li><a href=""><i class="fab fa-twitter"></i></a></li>
+                                            <li><a href=""><i class="fab fa-linkedin-in"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="blog-author">
+                            <div class="user-img" style="background-image: url(assets/images/team/img-1.jpg)"></div>
+                            <div class="user-content">
+                                <h2>DR Design <span>Graphic Designer</span></h2>
+                                <p>Creative graphic designer and web developer specializing in modern branding, responsive website design, and digital marketing solutions that help businesses grow online and build a strong visual identity.</p>
+                                <div class="social-aria text-left">
+                                    <a target="_blank" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a target="_blank" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a target="_blank" href="#"><i class="fab fa-instagram"></i></a>
+                                    <a target="_blank" href="#"><i class="fab fa-pinterest"></i></a>
+                                    <a target="_blank" href="#"><i class="fab fa-youtube"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="blog-comment">
+                            <h3>Comments (05)</h3>
+                            <ol class="main-comment">
+                                <li class="single-comment">
+                                    <div class="comment">
+                                        <div class="comment-user-img" style="background-image: url(assets/images/team/img-2.jpg)"></div>
+                                        <div class="comment-content">
+                                            <h4>DR DESIGN</h4>
+                                            <p class="comment-date">20 Feb 2018</p>
+                                            <p>This layout advice is extremely valuable. The structure helped me optimize my portfolio load times easily.</p>
+                                            <a href="#"><i class="fa fa-reply"></i>Reply</a>
+                                        </div>
+                                    </div>
+
+                                    <ol class="sub-comment">
+                                        <li class="single-comment">
+                                            <div class="comment">
+                                                <div class="comment-user-img" style="background-image: url(assets/images/team/img-1.jpg)"></div>
+                                                <div class="comment-content">
+                                                    <h4>Deepak Rajput</h4>
+                                                    <p class="comment-date">20 Feb 2018</p>
+                                                    <p>Thanks DR Design! Glad the system structure tips are working perfectly for your current projects.</p>
+                                                    <a href="#"><i class="fa fa-reply"></i>Reply</a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ol>
+                                </li>
+                                <li class="single-comment">
+                                    <div class="comment">
+                                        <div class="comment-user-img" style="background-image: url(assets/images/team/img-3.jpg)"></div>
+                                        <div class="comment-content">
+                                            <h4>Deepak Rajput</h4>
+                                            <p class="comment-date">20 Feb 2018</p>
+                                            <p>Outstanding article guide. The CSS grids segment clarifies complex responsive alignment challenges perfectly.</p>
+                                            <a href="#"><i class="fa fa-reply"></i>Reply</a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ol>
+
+                            <div class="blog-comment-form">
+                                <form action="#">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <p><input type="text" placeholder="Name" required></p>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <p><input type="email" placeholder="Email" required></p>
+                                        </div>
+                                    </div>
+                                    <p><input type="text" placeholder="Website"></p>
+                                    <p><textarea placeholder="Your Comments" required></textarea></p>
+                                    <div class="comment-btn text-center">
+                                        <button class="button" type="submit">Comment Now</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="blog-sidebar">
+                        <div class="sidebar-widget">
+                            <h2 class="sidebar-title">Search here</h2>
+                            <form action="blog.html" method="get">
+                                <input type="search" placeholder="Search">
+                                <button><i class="fa fa-search"></i></button>
+                            </form>
+                        </div>
+
+                        <div class="sidebar-widget">
+                            <h2 class="sidebar-title">Categories</h2>
+                            <ol>
+                                <li><a href="#">Design</a></li>
+                                <li><a href="#">Creative</a></li>
+                                <li><a href="#">Idea</a></li>
+                                <li><a href="#">Web Design</a></li>
+                                <li><a href="#">HTML Template</a></li>
+                                <li><a href="#">Wordpress</a></li>
+                                <li><a href="#">Other</a></li>
+                            </ol>
+                        </div>
+
+                        <div class="sidebar-widget">
+                            <h2 class="sidebar-title">RECENT POSTS</h2>
+                            <ol class="recent-post">
+                                <li>
+                                    <span style="background-image: url(assets/images/blog/img-1.png)"></span>
+                                    <div class="blog-content">
+                                        <a href="single-blog.html">Building fluid layouts for future devices</a>
+                                        <div class="blog-date">22 FEB 2018</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span style="background-image: url(assets/images/blog/img-2.jpg)"></span>
+                                    <div class="blog-content">
+                                        <a href="single-blog.html">Strategic UI patterns for clean branding</a>
+                                        <div class="blog-date">22 FEB 2018</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span style="background-image: url(assets/images/blog/img-3.jpg)"></span>
+                                    <div class="blog-content">
+                                        <a href="single-blog.html">Selecting standard modern font hierarchies</a>
+                                        <div class="blog-date">22 FEB 2018</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span style="background-image: url(assets/images/blog/img-4.jpeg)"></span>
+                                    <div class="blog-content">
+                                        <a href="single-blog.html">Frontend toolsets shifting creative industries</a>
+                                        <div class="blog-date">22 FEB 2018</div>
+                                    </div>
+                                </li>
+                            </ol>
+                        </div>
+
+                        <div class="sidebar-widget">
+                            <h2 class="sidebar-title">POPULAR TAGS</h2>
+                            <ol class="tags">
+                                <li><a href="#">Design</a></li>
+                                <li><a href="#">Creative</a></li>
+                                <li><a href="#">Idea</a></li>
+                                <li><a href="#">Web Design</a></li>
+                                <li><a href="#">HTML Template</a></li>
+                                <li><a href="#">Wordpress</a></li>
+                                <li><a href="#">Other</a></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  
+  <!-- ====== Footer Area ====== -->
+
+    <footer style="
+        background-color: #000000; 
+        color: #ffffff; 
+        text-align: center; 
+        padding: 25px 10px; 
+        font-family: Arial, sans-serif; 
+        border-top: 4px solid #ff6600;">
+        
+        <p style="margin: 0; font-size: 18px; letter-spacing: 0.5px; color: #ffffff;">
+            &copy; 2026 All rights reserved | 
+            Designed by <a href="https://deepakrajput227.blogspot.com/" target="_blank" style="color: #ff6600; font-weight: bold; text-decoration: none;">DR Design</a>
+        </p>
+    </footer>
+
+    <div class="dr-whatsapp-float">
+        <div class="dr-wa-tooltip">Let's Talk - DR Design</div>
+        <div class="dr-wa-ripple"></div>
+        <a href="https://wa.me/919714004207?text=Hi%20Deepak,%20I%20am%20interested%20in%20your%20creative%20design%20services." 
+           class="dr-wa-btn dr-wa-shake" 
+           target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <div class="floating-buttons">
+      <button id="scrollToggleBtn">
+        <i id="scrollIcon" class="fas fa-arrow-down"></i>
+      </button>
+    </div>
+
+    <!-- ====== // Footer Area ====== -->
+
+
+    
+    <!-- ====== ALL JS ====== -->
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/lightbox.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/jquery.mixitup.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/typed.js"></script>
+    <script src="assets/js/main.js"></script>
+
+
+
+  <!-- ====== Footer Area JS ====== -->
+    
+    <script>
+    const toggleBtn = document.getElementById("scrollToggleBtn");
+    const scrollIcon = document.getElementById("scrollIcon");
+    let isAtBottom = false;
+
+    window.addEventListener("scroll", function () {
+      if (window.scrollY > 300) {
+        scrollIcon.classList.remove("fa-arrow-down");
+        scrollIcon.classList.add("fa-arrow-up");
+        isAtBottom = true;
+      } else {
+        scrollIcon.classList.remove("fa-arrow-up");
+        scrollIcon.classList.add("fa-arrow-down");
+        isAtBottom = false;
+      }
+    });
+
+    toggleBtn.addEventListener("click", function () {
+      if (isAtBottom) {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+      } else {
+        window.scrollTo({
+          top: document.documentElement.scrollHeight,
+          behavior: "smooth"
+        });
+      }
+    });
+    </script>
+<!-- ====== Footer Area JS END ====== -->
+</body>
+</html>
