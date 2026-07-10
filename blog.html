@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="UTF-8">
+    <title>Blog | DR Design</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/css/lightbox.min.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        .bg-primari {
+            background-color: #ff6600 !important;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Floating Scroll Toggle Button Style */
+        .floating-buttons {
+          position: fixed;
+          bottom: 30px;
+          left: 30px;
+          z-index: 999;
+        }
+        #scrollToggleBtn {
+          width: 45px;
+          height: 45px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #fff;
+          border: none;
+          cursor: pointer;
+          font-size: 18px;
+          transition: 0.3s;
+          background: #ff7a00;
+          box-shadow: 0 5px 15px rgba(255, 122, 0, 0.4);
+          animation: pulse 2s infinite;
+        }
+        #scrollToggleBtn:hover {
+          transform: translateY(-4px);
+        }
+        @keyframes pulse {
+          0% { box-shadow: 0 0 0 0 rgba(255, 122, 0, 0.7); }
+          70% { box-shadow: 0 0 0 12px rgba(255, 122, 0, 0); }
+          100% { box-shadow: 0 0 0 0 rgba(255, 122, 0, 0); }
+        }
+
+        /* Fixed Positioning Right side WhatsApp */
+        .dr-whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .dr-wa-ripple {
+            position: absolute;
+            width: 75px;
+            height: 75px;
+            background: rgba(255, 95, 0, 0.4); 
+            border-radius: 50%;
+            animation: dr-ripple-effect 2s infinite;
+        }
+        .dr-wa-btn {
+            position: relative;
+            width: 65px;
+            height: 65px;
+            background: #25d366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.3s;
+            text-decoration: none;
+        }
+        .dr-wa-btn:hover {
+            transform: scale(1.1) rotate(10deg);
+            background: #128c7e;
+            color: #fff;
+        }
+        .dr-wa-tooltip {
+            position: absolute;
+            right: 85px;
+            background: #ff5f00;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: 600;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        .dr-whatsapp-float:hover .dr-wa-tooltip {
+            opacity: 1;
+            visibility: visible;
+            right: 80px;
+        }
+        @keyframes dr-ripple-effect {
+            0% { transform: scale(0.9); opacity: 1; }
+            100% { transform: scale(1.6); opacity: 0; }
+        }
+        .dr-wa-shake {
+            animation: dr-shake-logic 6s infinite;
+        }
+        @keyframes dr-shake-logic {
+            0%, 85%, 100% { transform: rotate(0deg); }
+            87% { transform: rotate(18deg); }
+            89% { transform: rotate(-18deg); }
+            91% { transform: rotate(12deg); }
+            93% { transform: rotate(-12deg); }
+        }
+    </style>
+    </head>
+
+<body data-spy="scroll" data-target=".navbar-nav">
+
+    <!-- ========================= -->
+<!-- 🟢 HEADER & NAVBAR START -->
+<!-- ========================= -->
+
+    <header id="header" class="header">
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container">
+
+                 <!-- 🟢 WEBSITE LOGO -->
+                <a class="navbar-brand logo" href="index.html">
+                    <img src="assets/images/logo.png" alt="logo">
+                </a>
+
+                  <!-- 🟢 MOBILE MENU BUTTON -->
+                   
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-expanded="false">
+                    <span><i class="fa fa-bars"></i></span>
+                </button>
+
+                <!-- 🟢 MAIN NAVIGATION MENU -->
+                <div class="collapse navbar-collapse main-menu" id="navbarSupportedContent">
+
+                    <!-- 🟢 MENU LINKS -->
+
+                    <!-- 🟢 MENU LINKS -->
+<ul class="navbar-nav ml-auto">
+
+    <li class="nav-item active">
+        <a class="nav-link" href="index.html#home">HOME</a>
+    </li>
+
+   <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            ABOUT
+        </a>
+        <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+
+
+    <a class="dropdown-item" href="index.html#about">About Me</a>
+
+    <a class="dropdown-item" href="index.html#experience">Experience</a>
+
+    <a class="dropdown-item" href="index.html#why-choose">Why Choose Me</a>
+
+    <a class="dropdown-item" href="index.html#testimonial">Testimonials</a>
+
+    <a class="dropdown-item" href="index.html#section-padding pb-70 team-area">Our Team</a>
+
+    <a class="dropdown-item" href="index.html#support">Support Me</a>
+
+    <a class="dropdown-item" href="index.html#work-process">My Working Process</a>
+
+</div>
+    </li>
+
+    <!-- Service Dropdown -->
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle"
+           href="#"
+           id="servicesDropdown"
+           role="button"
+           data-toggle="dropdown"
+           aria-haspopup="true"
+           aria-expanded="false">
+            SERVICE
+        </a>
+
+        <div class="dropdown-menu" aria-labelledby="servicesDropdown">
+            <a class="dropdown-item" href="index.html#service">All Services</a>
+            <a class="dropdown-item" href="index.html#graphic-design">Graphic Designing</a>
+            <a class="dropdown-item" href="index.html#digital-marketing">Digital Marketing</a>
+            <a class="dropdown-item" href="index.html#branding">Branding</a>
+        </div>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="index.html#portfolio">PORTFOLIO</a>
+    </li>
+
+    <!-- Policies Dropdown -->
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle"
+           href="#"
+           id="policiesDropdown"
+           role="button"
+           data-toggle="dropdown"
+           aria-haspopup="true"
+           aria-expanded="false">
+            POLICIES
+        </a>
+
+        <div class="dropdown-menu" aria-labelledby="policiesDropdown">
+        <a class="dropdown-item" href="Policies.html">Work Policies</a>
+        <a class="dropdown-item" href="websitespolices.html#privacy-policy">Privacy Policy</a>
+        <a class="dropdown-item" href="websitespolices.html#terms-conditions">Terms & Conditions</a>
+        <a class="dropdown-item" href="websitespolices.html#disclaimer">Disclaimer</a>
+        <a class="dropdown-item" href="websitespolices.html#copyright-notice">Copyright Notice</a>
+        </div>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="blog.html">BLOG</a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link pr0" href="index.html#contact">CONTACT</a>
+    </li>
+
+</ul>
+
+<div class="nav-buttons">
+    <a href="assets/images/Document/deepak resume.pdf"
+       download="Deepak_Resume.pdf"
+       target="_blank"
+       class="btn-resume">
+        Download Resume
+    </a>
+
+    <a href="https://wa.me/919714004207"target="_blank"class="btn-hire">Hire Me</a>
+</div>
+        </nav>
+
+        <!-- ========================= -->
+<!-- 🟢 HEADER & NAVBAR END -->
+<!-- ========================= -->
+
+        <div class="page-title bg-img section-padding bg-overlay" style="background-image: url(assets/images/breadcrumb.jpg)">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 text-center">
+                        <h2>Blog</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </header>
+    <section class="blog-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="blog-area">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="single-blog">
+                                    <div class="blog-thumb" style="background-image: url(assets/images/blog/img-1.png)"></div>
+                                    <h4 class="blog-title"><a href="single-blog.html">Full Responsive Web Design</a></h4>
+                                    <p class="blog-meta"><a href="#">Deepak Rajput</a>, 22 FEB 2018</p>
+                                    <p>Discover the vital principles of constructing completely fluid and modern responsive website layouts.</p>
+                                    <a href="single-blog.html" class="button">Read More</a>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="single-blog">
+                                    <div class="blog-thumb" style="background-image: url(assets/images/blog/img-2.jpg)"></div>
+                                    <h4 class="blog-title"><a href="single-blog.html">Modern UI/UX Best Practices</a></h4>
+                                    <p class="blog-meta"><a href="#">Deepak Rajput</a>, 22 FEB 2018</p>
+                                    <p>Enhance user retention by implementing these simple yet creative interface trends and workflows.</p>
+                                    <a href="single-blog.html" class="button">Read More</a>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="single-blog">
+                                    <div class="blog-thumb" style="background-image: url(assets/images/blog/img-3.jpg)"></div>
+                                    <h4 class="blog-title"><a href="single-blog.html">Mastering Typography Rules</a></h4>
+                                    <p class="blog-meta"><a href="#">Deepak Rajput</a>, 22 FEB 2018</p>
+                                    <p>How selecting the perfect font pairings can elevate your entire brand strategy and content readability.</p>
+                                    <a href="single-blog.html" class="button">Read More</a>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="single-blog">
+                                    <div class="blog-thumb" style="background-image: url(assets/images/blog/img-4.jpeg)"></div>
+                                    <h4 class="blog-title"><a href="single-blog.html">The Future of Creative Art</a></h4>
+                                    <p class="blog-meta"><a href="#">Deepak Rajput</a>, 22 FEB 2018</p>
+                                    <p>Explore how traditional methods blend perfectly with modern frontend tools to build interactive web experiences.</p>
+                                    <a href="single-blog.html" class="button">Read More</a>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="single-blog">
+                                    <div class="blog-thumb" style="background-image: url(assets/images/blog/img-5.png)"></div>
+                                    <h4 class="blog-title"><a href="single-blog.html">Optimizing Web Graphics</a></h4>
+                                    <p class="blog-meta"><a href="#">Deepak Rajput</a>, 22 FEB 2018</p>
+                                    <p>Learn tips for compressing vector assets and images properly without losing any high-definition presentation value.</p>
+                                    <a href="single-blog.html" class="button">Read More</a>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="single-blog">
+                                    <div class="blog-thumb" style="background-image: url(assets/images/blog/img-6.jpg)"></div>
+                                    <h4 class="blog-title"><a href="single-blog.html">Sass & Advanced CSS Grid</a></h4>
+                                    <p class="blog-meta"><a href="#">Deepak Rajput</a>, 22 FEB 2018</p>
+                                    <p>Structure large enterprise applications cleanly with scalable style systems and modular grids.</p>
+                                    <a href="single-blog.html" class="button">Read More</a>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="single-blog">
+                                    <div class="blog-thumb" style="background-image: url(assets/images/blog/img-7.jpeg)"></div>
+                                    <h4 class="blog-title"><a href="single-blog.html">Minimalist Portfolio Ideas</a></h4>
+                                    <p class="blog-meta"><a href="#">Deepak Rajput</a>, 22 FEB 2018</p>
+                                    <p>Keep your audience perfectly focused on your work by getting rid of unnecessary clutter and distractions.</p>
+                                    <a href="single-blog.html" class="button">Read More</a>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="single-blog">
+                                    <div class="blog-thumb" style="background-image: url(assets/images/blog/img-8.jpeg)"></div>
+                                    <h4 class="blog-title"><a href="single-blog.html">SEO Guide For Designers</a></h4>
+                                    <p class="blog-meta"><a href="#">Deepak Rajput</a>, 22 FEB 2018</p>
+                                    <p>An easy checklist to ensure your digital designs are highly visible on major global search engines.</p>
+                                    <a href="single-blog.html" class="button">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-lg-6 text-center">
+                                <a href="#" class="button blog-btn">Load More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="blog-sidebar">
+                        <div class="sidebar-widget">
+                            <h2 class="sidebar-title">Search here</h2>
+                            <form action="blog.html" method="get">
+                                <input type="search" placeholder="Search">
+                                <button><i class="fa fa-search"></i></button>
+                            </form>
+                        </div>
+                        <div class="sidebar-widget">
+                            <h2 class="sidebar-title">Categories</h2>
+                            <ol>
+                                <li><a href="#">Design</a></li>
+                                <li><a href="#">Creative</a></li>
+                                <li><a href="#">Idea</a></li>
+                                <li><a href="#">Web Design</a></li>
+                                <li><a href="#">HTML Template</a></li>
+                                <li><a href="#">Wordpress</a></li>
+                                <li><a href="#">Other</a></li>
+                            </ol>
+                        </div>
+                        <div class="sidebar-widget">
+                            <h2 class="sidebar-title">RECENT POSTS</h2>
+                            <ol class="recent-post">
+                                <li>
+                                    <span style="background-image: url(assets/images/blog/img-1.png)"></span>
+                                    <div class="blog-content">
+                                        <a href="single-blog.html">Building fluid layouts for future devices</a>
+                                        <div class="blog-date">22 FEB 2018</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span style="background-image: url(assets/images/blog/img-2.jpg)"></span>
+                                    <div class="blog-content">
+                                        <a href="single-blog.html">Strategic UI patterns for clean branding</a>
+                                        <div class="blog-date">22 FEB 2018</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span style="background-image: url(assets/images/blog/img-3.jpg)"></span>
+                                    <div class="blog-content">
+                                        <a href="single-blog.html">Selecting standard modern font hierarchies</a>
+                                        <div class="blog-date">22 FEB 2018</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span style="background-image: url(assets/images/blog/img-4.jpeg)"></span>
+                                    <div class="blog-content">
+                                        <a href="single-blog.html">Frontend toolsets shifting creative industries</a>
+                                        <div class="blog-date">22 FEB 2018</div>
+                                    </div>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="sidebar-widget">
+                            <h2 class="sidebar-title">POPULAR TAGS</h2>
+                            <ol class="tags">
+                                <li><a href="#">Design</a></li>
+                                <li><a href="#">Creative</a></li>
+                                <li><a href="#">Idea</a></li>
+                                <li><a href="#">Web Design</a></li>
+                                <li><a href="#">HTML Template</a></li>
+                                <li><a href="#">Wordpress</a></li>
+                                <li><a href="#">Other</a></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                </div>
+        </div>
+    </section>
+    <footer style="
+        background-color: #000000; 
+        color: #ffffff; 
+        text-align: center; 
+        padding: 25px 10px; 
+        font-family: Arial, sans-serif; 
+        border-top: 4px solid #ff6600;">
+        
+        <p style="margin: 0; font-size: 18px; letter-spacing: 0.5px; color: #ffffff;">
+            &copy; 2026 All rights reserved | 
+            Designed by <a href="https://deepakrajput227.blogspot.com/" target="_blank" style="color: #ff6600; font-weight: bold; text-decoration: none;">DR Design</a>
+        </p>
+    </footer>
+    <div class="dr-whatsapp-float">
+        <div class="dr-wa-tooltip">Let's Talk - DR Design</div>
+        <div class="dr-wa-ripple"></div>
+        <a href="https://wa.me/919714004207?text=Hi%20Deepak,%20I%20am%20interested%20in%20your%20creative%20design%20services." 
+           class="dr-wa-btn dr-wa-shake" 
+           target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <div class="floating-buttons">
+      <button id="scrollToggleBtn">
+        <i id="scrollIcon" class="fas fa-arrow-down"></i>
+      </button>
+    </div>
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/jquery.mixitup.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/typed.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+    const toggleBtn = document.getElementById("scrollToggleBtn");
+    const scrollIcon = document.getElementById("scrollIcon");
+    let isAtBottom = false;
+
+    window.addEventListener("scroll", function () {
+      if (window.scrollY > 300) {
+        scrollIcon.classList.remove("fa-arrow-down");
+        scrollIcon.classList.add("fa-arrow-up");
+        isAtBottom = true;
+      } else {
+        scrollIcon.classList.remove("fa-arrow-up");
+        scrollIcon.classList.add("fa-arrow-down");
+        isAtBottom = false;
+      }
+    });
+
+    toggleBtn.addEventListener("click", function () {
+      if (isAtBottom) {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+      } else {
+        window.scrollTo({
+          top: document.documentElement.scrollHeight,
+          behavior: "smooth"
+        });
+      }
+    });
+    </script>
+    </body>
+</html>
