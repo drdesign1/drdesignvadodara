@@ -367,7 +367,7 @@ button:focus {
     height: 100%;
     background-color: #Ff6633;
     opacity: .8;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
     z-index: 2;
 }
 
@@ -2044,6 +2044,28 @@ color:#ffffff;
 .dr-footer h4 {
     color: #fff !important;
 }
+
+/* Footer bottom links style for index page */
+.footer-bottom-links {
+    margin-top: 15px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #ff5f00; /* Pipe separator (|) ka color orange dikhane ke liye */
+}
+
+.footer-bottom-links a {
+    color: #ffffff !important; /* Links ka color humesha white rahega */
+    text-decoration: none;
+    margin: 0 12px;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+.footer-bottom-links a:hover {
+    color: #ff6600 !important; /* Mouse le jane par signature orange ho jayega */
+}
+
+
 
 /* BUY ME A COFFEE */
 
